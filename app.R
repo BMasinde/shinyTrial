@@ -77,7 +77,7 @@ server <- function(input, output, session) {
     useShinyjs()
     cordinatematrix = c(input$lat,input$lon)
     df = data.frame(lat = input$lat, lon = input$lon)
-    address =  GeoShiny::reverse_geocode_respone(input$lat,input$lon, input$map_key)
+    address =  GeoShiny::reverse_geocode_response(input$lat,input$lon, input$map_key)
     
     output$printAddress = renderText(address)
     output$mapplot = renderGoogle_map({
